@@ -12,6 +12,10 @@
         <h1>{{ header || 'Welcome'}}</h1>
         <!-- use v Model -->
         <!--<input v-model="header">-->
+        <ul>
+            <!-- for in loop with key-id -->
+            <li v-for = "item in items" :key="item.id">{{item.label}} </li> 
+        </ul>
         
     </div>
 
@@ -24,7 +28,12 @@
             data() {
                 return {
                     //header: "Vue is ready!",
-                    //header: "Shopping List App"
+                    header: "Shopping List App",
+                    items: [
+                       {id:1, label:"Milk" },
+                       {id:2, label: "Rice"},
+                       {id:3, label:"Tea" },
+                    ]
                 }
             }
         })
